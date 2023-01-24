@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 01
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1): Duke Glenn 
+**Name (Team Member 2): Bryan Flanagan
 
 In this recitation, we will investigate asymptotic complexity. Additionally, we will get familiar with the various technologies we'll use for collaborative coding.
 
@@ -29,7 +29,7 @@ To complete this recitation, follow the instructions in this document. Some of y
 
 ## Turning in your work
 
-- Once complete, click on the "Version Control" icon in the left pane on repl.it.
+- Once complete, click on the "Git" icon in the left pane on repl.it.
 - Enter a commit message in the "what did you change?" text box
 - Click "commit and push." This will push your code to your github repository.
 - Although you are working as a team, please have each team member submit the same code to their repository. One person can copy the code to their repl.it and submit it from there.
@@ -48,11 +48,13 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+**TODO: Linear search: if the value of key only appears once at the very end of the list or does not exist in the list at all.
+        Binary search: if the value of key appears as the first or last value of the list, or it does not exist in the list at all, maximum number of splits will have to occour.**
 
 - [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+**TODO: Linear search: if the value of key is the first value in the list, the search will only have to run once.
+        Binary search: if the value of key is the middle value of the entire list, when the search checks the middle value, it will land on the key value. **
 
 - [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
 
