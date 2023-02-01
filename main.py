@@ -3,7 +3,7 @@ CMPS 2200  Recitation 1
 """
 
 ### the only imports needed are here
-### import tabulate
+import tabulate
 import time
 ###
 
@@ -55,35 +55,31 @@ def test_binary_search():
 	###
 
 
-def time_search(sort_fn, mylist, key):
+def time_search(search_fn, mylist, key):
 	### TODO
   firstTime = time.time() * 1000
-  mylist.sort_fn
+  search_fn(mylist, key)
   lastTime = time.time() * 1000
   totalTime = lastTime-firstTime
   return totalTime
 	###
 
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
-  nList = []
-  linearSearchTimes = []
-  binarySearchTimes = []
+  
+  timeList = []
   for size in sizes:
-    nList.append(size)
-    linearSearchTime = time_search(linear_search, size, -1)
-    linearSearchTimes.append(linearSearchTime)
-    binarySearchTime = time_search(binary_search, size, -1)
-    binarySearchTimes.append(binarySearchTime)
-
-  data = list(zip(nList, linearSearchTimes, binarySearchTimes))
-  return data
+    size = int(size)
+    retList = list(range(size))
+    linearSearchTime = time_search(linear_search, retList, -1)
+    binarySearchTime = time_search(binary_search, retList, -1)
+    timeList.append((size, linearSearchTime, binarySearchTime))
+  return timeList
 
 def print_results(results):
-	""" done """
-	print(tabulate.tabulate(results,
+  print(tabulate.tabulate(results,
 							headers=['n', 'linear', 'binary'],
 							floatfmt=".3f",
-							tablefmt="github"))
+              tablefmt="github"))
 
 def test_compare_search():
 	res = compare_search(sizes=[10, 100])
